@@ -1,0 +1,16 @@
+{
+  "cuenta.contact": "Contact us today and discover how we can help you achieve your goals.",
+  "cuenta.ready": "Ready to get started?",
+  "cuenta.contactButton": "Contact now",
+  "cuenta.formTitle": "Contact Form",
+  "cuenta.name": "Name",
+  "cuenta.email": "Email",
+  "cuenta.message": "Message",
+  "cuenta.nameEjemplo": "Example: John Smith",
+  "cuenta.emailObligatorio": "Email is required.",
+  "cuenta.emailNoValido": "Email is not valid.",
+  "cuenta.emailEjemplo": "example@example.com",
+  "cuenta.messageObligatorio": "Message is required.",
+  "cuenta.messageEjemplo": "Example: Hello, I'm interested in your services.",
+  "cuenta.enviar": "Send"
+}
