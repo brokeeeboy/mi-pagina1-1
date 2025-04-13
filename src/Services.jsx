@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
@@ -19,14 +21,12 @@ const Services = () => {
                 <span className="text-4xl">🛠️</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-800">
-                Mantenimiento y Reparación
+                {t("services.title1")}
               </h3>
             </div>
             <ul className="text-gray-600 pl-4 text-lg">
-              <li>• Mantenimiento industrial integral.</li>
-              <li>
-                • Reparación especializada en equipos industriales y sanitarios.
-              </li>
+              <li>{t("services.subtitle11")}</li>
+              <li>{t("services.subtitle12")}</li>
             </ul>
           </div>
 
@@ -44,15 +44,12 @@ const Services = () => {
                 <span className="text-4xl">🤖</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-800">
-                Ingeniería y Automatización
+                {t("services.title2")}
               </h3>
             </div>
             <ul className="text-gray-600 pl-4 text-lg">
-              <li>
-                • Toma decisiones basadas en datos con nuestros dashboards y
-                reportes personalizados.
-              </li>
-              <li>• Sistemas de transmisión mecánica de alto rendimiento.</li>
+              <li>{t("services.subtitle21")}</li>
+              <li>{t("services.subtitle22")}</li>
             </ul>
           </div>
 
@@ -70,12 +67,12 @@ const Services = () => {
                 <span className="text-4xl">🏗️</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-800">
-                Montaje y Obras Civiles
+                {t("services.title3")}
               </h3>
             </div>
             <ul className="text-gray-600 pl-4 text-lg">
-              <li>• Montaje y puesta en marcha de equipos electromecánicos.</li>
-              <li>• Ejecución de obras civiles con precisión.</li>
+              <li>{t("services.subtitle31")}</li>
+              <li>{t("services.subtitle32")}</li>
             </ul>
           </div>
         </div>

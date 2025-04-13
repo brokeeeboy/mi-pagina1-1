@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import LanguageSelector from "./components/LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t } = useTranslation();
   const scrollToBottom = () => {
     window.scrollTo({
       top: document.body.scrollHeight,
@@ -41,7 +43,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            {["Inicio", "Servicios", "Nosotros"].map((item, i) => (
+            {[t("header.1"), t("header.2"), t("header.3")].map((item, i) => (
               <motion.a
                 key={i}
                 href="#"
@@ -56,7 +58,7 @@ const Header = () => {
               whileHover={{ scale: 1.1 }}
               className="text-gray-600 hover:text-blue-600 transition"
             >
-              Contacto
+              {t("header.4")}
             </motion.button>
 
             <motion.div

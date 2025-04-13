@@ -1,8 +1,10 @@
 // src/Hero.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white px-4 py-20">
       {/* Background Blur Effects */}
@@ -17,9 +19,9 @@ const Hero = () => {
           transition={{ duration: 1 }}
         >
           <span className="block text-white drop-shadow-lg">
-            Transformando ideas
+            {t("hero.title")}
           </span>
-          <span className="block text-blue-200">en realidad</span>
+          <span className="block text-blue-200">{t("hero.subtitle")}</span>
         </motion.h2>
 
         <motion.p
@@ -28,11 +30,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
         >
-          En <span className="font-bold text-white">ZUBRA</span>, combinamos
-          experiencia, innovación y compromiso para ofrecer soluciones
-          industriales integrales. Desde estructuras metálicas hasta
-          automatización de procesos, somos el aliado que tu empresa necesita
-          para alcanzar nuevas metas.
+          {t("hero.text1")}{" "}
+          <span className="font-bold text-white">{t("hero.text2")}</span>,{" "}
+          {t("hero.text3")}
         </motion.p>
 
         <motion.div
@@ -42,10 +42,10 @@ const Hero = () => {
           transition={{ delay: 0.6 }}
         >
           <button className="bg-white text-blue-700 hover:bg-gray-100 font-semibold py-3 px-8 rounded-xl shadow-xl transition duration-300 transform hover:scale-105">
-            Comenzar
+            {t("hero.button1")}
           </button>
           <button className="border-2 border-white text-white hover:bg-white hover:text-blue-700 font-semibold py-3 px-8 rounded-xl transition duration-300 transform hover:scale-105">
-            Saber más
+            {t("hero.button2")}
           </button>
         </motion.div>
       </div>

@@ -1,24 +1,23 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Testimonials = () => {
+  const { t } = useTranslation();
   const testimonials = [
     {
-      quote:
-        "Gracias a Zubra, optimizamos el mantenimiento de nuestras líneas de producción. Su enfoque técnico redujo nuestros tiempos de inactividad considerablemente.",
+      quote: t("testimonial.testimonial1"),
       author: "Carlos Méndez",
-      role: "Gerente de Operaciones, MetalSur",
+      role: t("testimonial.autor1"),
     },
     {
-      quote:
-        "La automatización que implementaron mejoró el control y eficiencia de nuestros procesos. Ahora tomamos decisiones basadas en datos en tiempo real.",
+      quote: t("testimonial.testimonial2"),
       author: "Ana Rodríguez",
-      role: "Jefa de Ingeniería, AgroTec",
+      role: t("testimonial.autor2"),
     },
     {
-      quote:
-        "Nos apoyaron con el montaje de equipos electromecánicos en una planta industrial. Cumplieron cada hito con precisión y profesionalismo.",
+      quote: t("testimonial.testimonial3"),
       author: "Luis Fernández",
-      role: "Supervisor de Proyectos, Enerbuild",
+      role: t("testimonial.autor3"),
     },
   ];
 
@@ -26,7 +25,7 @@ const Testimonials = () => {
     <section className="py-16 bg-blue-100">
       <div className="container mx-auto px-4 max-w-6xl text-center">
         <h2 className="text-3xl font-bold text-blue-800 mb-12">
-          Testimonios Industriales
+          {t("testimonial.title")}
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, index) => (
