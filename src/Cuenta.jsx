@@ -1,26 +1,39 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import "animate.css"; // Asegúrate de tener la animación importada
 
 const CTA = () => {
   const { t } = useTranslation();
-
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
-  const [showForm, setShowForm] = useState(false);
 
+  const [showForm, setShowForm] = useState(false);
+  const [showNotification, setShowNotification] = useState(false); // Estado para la notificación
+
+  // Alternar la visibilidad del formulario
   const handleToggleForm = () => {
     setShowForm((prev) => !prev);
+    if (showForm) {
+      setShowNotification(false); // Ocultar la notificación si el formulario se cierra
+    }
   };
 
+  // Manejo del envío del formulario
   const onSubmit = (data) => {
-    // Aquí puedes manejar el envío de datos, por ejemplo, un POST
     console.log(data);
-    reset(); // Limpiar los campos del formulario después de enviar
+    setShowNotification(true); // Mostrar la notificación
+
+    reset(); // Limpiar el formulario después de enviar
+
+    // Ocultar la notificación después de 4 segundos
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 4000);
   };
 
   return (
@@ -34,6 +47,24 @@ const CTA = () => {
         >
           {t("cuenta.contactButton")}
         </button>
+
+        {/* Notificación flotante */}
+        {showNotification && (
+          <div
+            className="fixed bottom-4 right-4 bg-blue-600 text-white py-4 px-6 rounded-lg shadow-lg flex items-center space-x-4 transform transition-all opacity-100 animate__animated animate__fadeIn"
+            style={{ zIndex: 9999 }}
+          >
+            <span className="text-lg font-bold">
+              {t("cuenta.formSubmitted")}
+            </span>
+            <button
+              onClick={() => setShowNotification(false)}
+              className="text-xl font-bold text-white ml-2"
+            >
+              ×
+            </button>
+          </div>
+        )}
 
         {/* Formulario */}
         {showForm && (
