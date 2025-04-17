@@ -1,4 +1,3 @@
-// src/components/LanguageSelector.jsx
 import React from "react";
 import { useTranslation } from "react-i18next";
 import esFlag from "../assets/banderasImages/es.png";

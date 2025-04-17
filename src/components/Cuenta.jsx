@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import "animate.css"; // Asegúrate de tener la animación importada
+import "animate.css";
 
 const CTA = () => {
   const { t } = useTranslation();
@@ -13,24 +13,21 @@ const CTA = () => {
   } = useForm();
 
   const [showForm, setShowForm] = useState(false);
-  const [showNotification, setShowNotification] = useState(false); // Estado para la notificación
+  const [showNotification, setShowNotification] = useState(false);
 
-  // Alternar la visibilidad del formulario
   const handleToggleForm = () => {
     setShowForm((prev) => !prev);
     if (showForm) {
-      setShowNotification(false); // Ocultar la notificación si el formulario se cierra
+      setShowNotification(false);
     }
   };
 
-  // Manejo del envío del formulario
   const onSubmit = (data) => {
     console.log(data);
-    setShowNotification(true); // Mostrar la notificación
+    setShowNotification(true);
 
-    reset(); // Limpiar el formulario después de enviar
+    reset();
 
-    // Ocultar la notificación después de 4 segundos
     setTimeout(() => {
       setShowNotification(false);
     }, 4000);
@@ -48,7 +45,6 @@ const CTA = () => {
           {t("cuenta.contactButton")}
         </button>
 
-        {/* Notificación flotante */}
         {showNotification && (
           <div
             className="fixed bottom-4 right-4 bg-blue-600 text-white py-4 px-6 rounded-lg shadow-lg flex items-center space-x-4 transform transition-all opacity-100 animate__animated animate__fadeIn"
@@ -66,7 +62,6 @@ const CTA = () => {
           </div>
         )}
 
-        {/* Formulario */}
         {showForm && (
           <div className="mt-10 max-w-lg mx-auto bg-white text-gray-800 p-6 rounded-2xl shadow-2xl transition-all duration-500">
             <h3 className="text-2xl font-semibold mb-4">

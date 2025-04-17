@@ -1,5 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import IngAutomatizacionImg from "../assets/imagenes/ingenieria-y-automatizacion.jpg";
+import MantenimientoImg from "../assets/imagenes/mantenimiento-y-reparacion.jpg";
+import MontajeObraImg from "../assets/imagenes/Montaje-y-Obras-Civiles.jpg";
 
 const Services = () => {
   const { t } = useTranslation();
@@ -11,7 +14,7 @@ const Services = () => {
           <div className="flex flex-col bg-gradient-to-br from-blue-50 to-white p-12 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
             <div className="mb-6">
               <img
-                src="servicesImages/mantenimiento-y-reparacion.jpg"
+                src={MantenimientoImg}
                 alt="Mantenimiento y Reparación"
                 className="w-full h-64 object-cover rounded-xl"
               />
@@ -34,7 +37,7 @@ const Services = () => {
           <div className="flex flex-col bg-gradient-to-br from-blue-50 to-white p-12 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
             <div className="mb-6">
               <img
-                src="servicesImages/ingenieria-y-automatizacion.jpg"
+                src={IngAutomatizacionImg}
                 alt="Ingeniería y Automatización"
                 className="w-full h-64 object-cover rounded-xl"
               />
@@ -57,7 +60,7 @@ const Services = () => {
           <div className="flex flex-col bg-gradient-to-br from-blue-50 to-white p-12 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
             <div className="mb-6">
               <img
-                src="servicesImages/Montaje-y-Obras-Civiles.jpg"
+                src={MontajeObraImg}
                 alt="Montaje y Obras Civiles"
                 className="w-full h-64 object-cover rounded-xl"
               />

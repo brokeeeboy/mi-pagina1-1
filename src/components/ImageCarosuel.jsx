@@ -1,30 +1,32 @@
 import React from "react";
 import "animate.css";
+import CMPLogo from "./../assets/imagenes/CMP-logo.png";
+import SierraGordaLogo from "./../assets/imagenes/logo-sierra-gorda1.png";
+import NestleLogo from "./../assets/imagenes/nestle-logo.svg";
+import CristalLogo from "./../assets/imagenes/logoColor-e1734803263462.png";
 
 const PartnerLogos = () => {
   const logos = [
     {
-      src: "https://zubra.cl/wp-content/uploads/2024/12/Nestle-Logo-Transparent-Background-White.png.webp",
+      src: NestleLogo,
       alt: "Nestlé",
     },
     {
-      src: "https://zubra.cl/wp-content/uploads/2024/12/CMP-logo.png",
+      src: CMPLogo,
       alt: "CMP",
     },
     {
-      src: "https://zubra.cl/wp-content/uploads/2024/12/logo-sierra-gorda1.png",
+      src: SierraGordaLogo,
       alt: "Sierra Gorda",
     },
     {
-      src: "https://zubra.cl/wp-content/uploads/2024/12/logoColor-e1734803263462.png",
+      src: CristalLogo,
       alt: "CristalChile",
     },
   ];
 
   return (
     <div className="w-full bg-[#e2e5eb] py-10">
-      {" "}
-      {/* Fondo gris claro */}
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
         {logos.map((logo, index) => (
           <div

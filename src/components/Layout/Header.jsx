@@ -1,15 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
-import LanguageSelector from "./components/LanguageSelector";
+import LanguageSelector from "../LanguageSelector";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import ZubraLogo from "../../assets/imagenes/zubra-logo-retina.png";
 
 const Header = () => {
   const { t } = useTranslation();
-  const scrollToBottom = () => {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth",
-    });
+  const navigate = useNavigate();
+
+  const navigateToRoute = (path) => {
+    navigate(path);
   };
 
   return (
@@ -30,7 +31,7 @@ const Header = () => {
             transition={{ delay: 0.3 }}
           >
             <img
-              src="/zubra-logo-retina.png"
+              src={ZubraLogo}
               alt="Logotipo de Zubra"
               className="h-16 w-auto object-contain"
             />
@@ -43,24 +44,41 @@ const Header = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            {[t("header.1"), t("header.2"), t("header.3")].map((item, i) => (
-              <motion.a
-                key={i}
-                href="#"
-                whileHover={{ scale: 1.1 }}
-                className="text-gray-600 hover:text-blue-600 transition font-medium"
-              >
-                {item}
-              </motion.a>
-            ))}
-            <motion.button
-              onClick={scrollToBottom}
+            <motion.a
+              key={"home-link"}
+              onClick={() => navigateToRoute("/")}
               whileHover={{ scale: 1.1 }}
-              className="text-gray-600 hover:text-blue-600 transition"
+              className="text-gray-600 hover:text-blue-600 transition font-medium"
+            >
+              {t("header.1")}
+            </motion.a>
+            {/* Links header Servicios*/}
+            <motion.a
+              key={"servicios-link"}
+              onClick={() => navigateToRoute("/servicios")}
+              whileHover={{ scale: 1.1 }}
+              className="text-gray-600 hover:text-blue-600 transition font-medium"
+            >
+              {t("header.2")}
+            </motion.a>
+            {/* Links header Nosotros*/}
+            <motion.a
+              key={"nosotros-link"}
+              onClick={() => navigateToRoute("/nosotros")}
+              whileHover={{ scale: 1.1 }}
+              className="text-gray-600 hover:text-blue-600 transition font-medium"
+            >
+              {t("header.3")}
+            </motion.a>
+            {/* Links header Contacto*/}
+            <motion.a
+              key={"contacto-link"}
+              onClick={() => navigateToRoute("/contacto")}
+              whileHover={{ scale: 1.1 }}
+              className="text-gray-600 hover:text-blue-600 transition font-medium"
             >
               {t("header.4")}
-            </motion.button>
-
+            </motion.a>
             <motion.div
               className="ml-4"
               initial={{ opacity: 0, x: 20 }}

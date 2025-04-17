@@ -9,8 +9,8 @@ i18n.use(initReactI18next).init({
       translation: esJSON,
     },
   },
-  lng: "en",
-  fallbackLng: "es",
+  lng: "es",
+  fallbackLng: "en",
   debug: true,
 });
 export default i18n;

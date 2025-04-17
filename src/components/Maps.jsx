@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion"; // Importamos framer-motion
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 const Maps = () => {
   const { t } = useTranslation();
@@ -7,9 +7,9 @@ const Maps = () => {
     <div className="my-12 mx-auto max-w-7xl px-4">
       <motion.h2
         className="text-4xl font-bold text-center text-blue-600 mb-6"
-        initial={{ opacity: 0, y: -20 }} // Aparece desde arriba
-        animate={{ opacity: 1, y: 0 }} // Se desplaza hacia su posición final
-        transition={{ duration: 1, ease: "easeOut" }} // Duración de la animación
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
         {t("mapa.title")}
       </motion.h2>
