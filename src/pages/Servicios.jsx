@@ -4,45 +4,38 @@ import MantenimientoImg from "../assets/imagenes/mantenimiento-y-reparacion.jpg"
 import AutomatizacionImg from "../assets/imagenes/ingenieria-y-automatizacion.jpg";
 import MontajeImg from "../assets/imagenes/Montaje-y-Obras-Civiles.jpg";
 import FabricacionImg from "../assets/imagenes/Fabricar.png";
+import { useTranslation } from "react-i18next";
 
 const Servicios = () => {
+  const { t } = useTranslation();
   const services = [
     {
-      title: "Mantenimiento y Reparación",
+      title: t("servicios.title1"),
       imageSrc: MantenimientoImg,
       imageAlt: "Mantenimiento industrial",
-      items: [
-        "Mantenimiento industrial integral",
-        "Reparación especializada en equipos industriales y sanitarios",
-      ],
+      items: [t("servicios.subtitle11"), t("servicios.subtitle12")],
     },
     {
-      title: "Ingeniería y Automatización",
+      title: t("servicios.title2"),
       imageSrc: AutomatizacionImg,
       imageAlt: "Automatización de procesos",
-      items: [
-        "Automatización de procesos industriales para mayor eficiencia",
-        "Sistemas de transmisión mecánica de alto rendimiento",
-      ],
+      items: [t("servicios.subtitle21"), t("servicios.subtitle22")],
     },
     {
-      title: "Montaje y Obras Civiles",
+      title: t("servicios.title3"),
       imageSrc: MontajeImg,
       imageAlt: "Montaje de equipos",
-      items: [
-        "Montaje y puesta en marcha de equipos electromecánicos",
-        "Ejecución de obras civiles con precisión",
-      ],
+      items: [t("servicios.subtitle31"), t("servicios.subtitle32")],
     },
     {
-      title: "Fabricación y Diseño",
+      title: t("servicios.title4"),
       imageSrc: FabricacionImg,
       imageAlt: "Diseño y estructuras metálicas",
       items: [
-        "Estructuras metálicas específicas para proyectos industriales",
-        "Producción de matrices personalizadas de alta precisión",
-        "Mesas transportadoras para todo tipo de industria, incluyendo sanitaria",
-        "Trailers para instrumentación y generadores solares",
+        t("servicios.subtitle41"),
+        t("servicios.subtitle42"),
+        t("servicios.subtitle43"),
+        t("servicios.subtitle44"),
       ],
     },
   ];
@@ -58,13 +51,11 @@ const Servicios = () => {
           className="mb-12 text-center"
         >
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Soluciones Industriales Personalizadas
+            {t("servicios.top1")}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            En <strong>ZUBRA</strong>, combinamos experiencia, innovación y
-            compromiso para ofrecer soluciones industriales integrales. Desde la
-            fabricación de estructuras metálicas hasta la automatización de
-            procesos, somos el aliado estratégico que tu empresa necesita.
+            {t("servicios.top3")} <strong>ZUBRA</strong>
+            {t("servicios.top2")}
           </p>
         </motion.div>
 
