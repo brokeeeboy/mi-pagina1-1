@@ -13,6 +13,7 @@
   "cuenta.messageObligatorio": "Message is required.",
   "cuenta.messageEjemplo": "Example: Hi, I'm interested in your services.",
   "cuenta.enviar": "Send",
+  "cuenta.formSubmitted": "Form submitted successfully.",
 
   "footer.inicio": "Home",
   "footer.contact": "Contact Us",
